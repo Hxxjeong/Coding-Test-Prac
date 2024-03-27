@@ -1,11 +1,9 @@
 class Solution {
     public String solution(String s) {
         String answer = " ";
-        
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
         String[] str = s.split(" ");
-        
+        int max = Integer.parseInt(str[0]);
+        int min = Integer.parseInt(str[0]);
         for(int i=0; i<str.length; i++) {
             if (max < Integer.parseInt(str[i]))
                 max = Integer.parseInt(str[i]);
@@ -13,7 +11,7 @@ class Solution {
                 min = Integer.parseInt(str[i]);
         }
 
-        answer = String.valueOf(min) + " " + String.valueOf(max);
+        answer = min + " " + max;
         return answer;
     }
 }
