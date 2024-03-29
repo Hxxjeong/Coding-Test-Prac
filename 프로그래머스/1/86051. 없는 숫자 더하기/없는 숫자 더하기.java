@@ -2,11 +2,11 @@ import java.util.Arrays;
 
 class Solution {
     public int solution(int[] numbers) {
-        int sum = 0;
+        int sum = 45;
         for(int i: numbers) {
-            sum += i;
+            sum -= i;
         }
         
-        return 45-sum;
+        return sum;
     }
 }
