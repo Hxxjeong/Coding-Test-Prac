@@ -7,15 +7,8 @@ class Solution {
             str[i] = t.substring(i, i+p.length());
         }
         
-        // 인덱스 내용을 숫자로 변경
-        long[] ints = new long[str.length];
-        
-        for(int i=0; i<ints.length; i++) {
-            ints[i] = Long.parseLong(str[i]);
-        }
-        
-        for (int i=0; i<ints.length; i++) {
-            if (ints[i] <= Long.parseLong(p))
+        for (int i=0; i<str.length; i++) {
+            if(Long.parseLong(str[i]) <= Long.parseLong(p))
                 answer++;
         }
         
