@@ -5,7 +5,7 @@ class Solution {
         
         // count만큼 계산
         for(int i=2; i<=count; i++) {
-            sum += (long)price * i;
+            sum += price * i;
         }
 
         // 모자란 금액
