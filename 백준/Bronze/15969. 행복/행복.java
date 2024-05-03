@@ -1,21 +1,19 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int n = Integer.parseInt(br.readLine());
-
-        String[] score = br.readLine().split(" ");
-        Arrays.sort(score);
-
-        int result = Integer.parseInt(score[score.length-1]) - Integer.parseInt(score[0]);
-
-        System.out.println(result);
-
-        br.close();
-    }
+    public static void main(String[] args) {
+    	Scanner scanner=new Scanner(System.in);
+    	
+    	int n=scanner.nextInt();
+    	List<Integer> num=new ArrayList<Integer>();
+    	
+    	for(int i=0;i<n;i++) {
+    		num.add(scanner.nextInt());
+    	}
+    	
+    	System.out.println(Collections.max(num)-Collections.min(num));
+   }
 }
