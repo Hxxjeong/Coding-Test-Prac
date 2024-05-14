@@ -9,6 +9,6 @@ class Solution {
             phoneketmon.put(i, phoneketmon.getOrDefault(i, 0) + 1);
         }
         
-        return phoneketmon.size() <= nums.length/2 ? phoneketmon.size() : nums.length/2;
+        return Math.min(phoneketmon.size(), nums.length/2);
     }
 }
