@@ -6,6 +6,7 @@ class Solution {
         
         Queue<Integer> queue = new LinkedList<>();
         
+        // 각 기능별 남은 날짜 계산
         for(int i=0; i<progresses.length; i++) {
             int progress = (int)Math.ceil((100 - progresses[i]) / (double)speeds[i]);
             queue.add(progress);
