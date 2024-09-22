@@ -1,32 +1,27 @@
 import java.io.*;
-import java.util.*;
 
 public class Main {
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         String input = br.readLine();
 
-        Stack<Character> stack = new Stack<>();
         int answer = 0;
+        int openStick = 0;
 
-        for (int i=0; i<input.length(); i++) {
+        for(int i=0; i<input.length(); i++) {
             char c = input.charAt(i);
 
-            if (c == '(') {
-                stack.push(c);
+            if(c == '(') {
+                openStick++;
             }
             else {
-                stack.pop();
+                openStick--;
 
-                // 레이저인 경우
-                if (input.charAt(i-1) == '(') {
-                    answer += stack.size(); // (의 개수만큼 더함
+                // '()'인 경우 (레이저인 경우)
+                if(input.charAt(i-1) == '(') {
+                    answer += openStick; // 현재 열려 있는 막대가 잘림
                 }
-                else {  // 막대기의 끝인 경우
-                    answer++;
-                }
+                else answer += 1;   // 막대기의 끝인 경우
             }
         }
 
