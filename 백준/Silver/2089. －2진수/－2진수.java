@@ -12,28 +12,18 @@ public class Main {
         }
 
         StringBuilder sb = new StringBuilder();
-        while (N != 1) {
-            // N이 양수인 경우
-            if(N > 0) {
-                sb.append(N % 2);   // 양수 2로 나눴을 때와 동일
-                N /= -2;
-            }
-            // N이 음수인 경우
-            else {
-                // 절댓값이 2로 나누어 떨어질 때
-                if(Math.abs(N) % 2 == 0) {
-                    sb.append(0);
-                    N /= -2;
-                }
-                // 절댓값이 2로 나누어 떨어지지 않을 때
-                else {
-                    sb.append(1);
-                    N = Math.abs(N) / 2 + 1;    // 정수 몫이므로 나머지 추가
-                }
-            }
-        }
+        while (N != 0) {
+            int remainder = N % -2;     // 나머지
+            N /= -2;
 
-        sb.append(1);   // 가장 마지막 자리 추가
+            // 나머지가 -1인 경우 1로 변경
+            if (remainder < 0) {
+                remainder += 2;
+                N++;    // 2로 나누어 떨어지지 않았기 때문에 정수 나눗셈을 고려하여 나머지 추가
+            }
+
+            sb.append(remainder);
+        }
 
         System.out.println(sb.reverse());
 
