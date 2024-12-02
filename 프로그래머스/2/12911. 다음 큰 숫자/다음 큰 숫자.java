@@ -9,10 +9,6 @@ class Solution {
             if(c == '1') countOne++;
         }
         
-        String num = null;
-        // 모든 자릿수가 1인 경우
-        // if(countOne == binaryN.length()) num = "10" + (countOne-1;
-        
         int number = n;
         while(true) {
             number++;
@@ -28,7 +24,6 @@ class Solution {
                 break;
             }
         }
-        
             
         return answer;
     }
