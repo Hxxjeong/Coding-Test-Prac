@@ -16,7 +16,7 @@ class Solution {
             }
             else {
                 answer[0] = (i%n) + 1; // n번째 사람
-                answer[1] = (int) Math.floor(i/(double)n)+1; // n번쨰 순서
+                answer[1] = (i/n) + 1; // n번쨰 순서
                 break;
             }
         }
