@@ -7,18 +7,21 @@ public class Main {
         int q = Integer.parseInt(br.readLine());
 
         StringBuilder sb = new StringBuilder();
+        int[][] arr = new int[26][S.length()];
+        arr[S.charAt(0)-'a'][0] = 1;
+        for(int i=1; i<S.length(); i++) {
+            for(int j=0; j<26; j++) arr[j][i] = arr[j][i-1];
+            arr[S.charAt(i)-'a'][i]++;
+        }
+
         for(int i=0; i<q; i++) {
             String[] input = br.readLine().split(" ");
             char a = input[0].charAt(0);
             int start = Integer.parseInt(input[1]);
             int end = Integer.parseInt(input[2]);
 
-            int count = 0;
-            String str = S.substring(start, end+1);
-            for(char c: str.toCharArray()) {
-                if(c == a) count++;
-            }
-            sb.append(count).append("\n");
+            if (start == 0) sb.append(arr[a-'a'][end]).append("\n");
+            else sb.append(arr[a-'a'][end] - arr[a-'a'][start-1]).append("\n");
         }
 
         System.out.println(sb);
