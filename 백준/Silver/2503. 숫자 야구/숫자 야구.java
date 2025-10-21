@@ -7,7 +7,6 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
 
         List<int[]> list = new ArrayList<>();   // 질문 받은 숫자 정보
-        List<int[]> info = new ArrayList<>();   // 해당하는 숫자
 
         for(int i=0; i<N; i++) {
             String[] input = br.readLine().split(" ");
